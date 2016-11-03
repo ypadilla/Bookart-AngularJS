@@ -1,0 +1,23 @@
+<div id="bookListWrapper">
+    <p>Please Click on buy button to buy the book.</p>
+     
+        
+            <ul class="list-unstyled">
+            <!--Here angular dynamically displays data fromt the cotroller file, also, ng-repeat is what is used to display all of the books in the object.-->
+            <li class="book" style="background: white url(imgs/{{book.imgUrl}}) no-repeat" ng-repeat = "book in kart">
+                    <div class="book-details clearfix">
+                        <h3>{{book.name}}</h3>
+                        <p>{{book.price | currency: 'USD$ '}}</p>
+                        <ul class="list-unstyled list-inline">
+                            <li>Rating: {{book.rating}}</li>
+                            <li>Binding: {{book.binding | uppercase}}</li>
+                            <li>Publisher: {{book.publisher}}</li>
+                            <li>Released: {{book.releaseDate}}</li>
+                        </ul>
+                        <p>{{book.details}}</p>
+                        <button class="btn btn-info pull-right" ng-click = "buy(book)">Buy</button>
+                        </div>
+                </li>
+            </ul>
+        </div>
+    
